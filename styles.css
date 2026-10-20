@@ -92,21 +92,21 @@ nav a:hover {
 }
 
 .hero-slide--1 {
-    background-image: url('imagenes/teatro.jpg');
+    background-image: url('teatro.jpg');
 }
 
 .hero-slide--2 {
-    background-image: url('imagenes/fondo1.jpg');
+    background-image: url('fondo1.jpg');
     animation-delay: 5s;
 }
 
 .hero-slide--3 {
-    background-image: url('imagenes/fondo2.jpg');
+    background-image: url('fondo2.jpg');
     animation-delay: 10s;
 }
 
 .hero-slide--4 {
-    background-image: url('imagenes/fondo3.jpg');
+    background-image: url('fondo3.jpg');
     animation-delay: 15s;
 }
 

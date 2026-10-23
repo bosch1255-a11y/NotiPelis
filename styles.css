@@ -92,7 +92,7 @@ nav a:hover {
 }
 
 .hero-slide--1 {
-    background-image: url('teatro.jpg');
+    background-image: url('teatro.jpg') !imoportant;
 }
 
 .hero-slide--2 {

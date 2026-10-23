@@ -88,7 +88,7 @@ nav a:hover {
     opacity: 0;
     background-size: cover;
     background-position: center;
-    animation: cambioHero 20s infinite easy-in-out;
+    animation: cambioHero 20s infinite ease-in-out;
 }
 
 .hero-slide--1 {

@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title> NotiPeli | Plantilla Web</title>
+    <title> CineVibe | Noticias de Cine</title>
 
     <!-- Conexión con CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
     <!-- =========================
          ENCABEZADO
     ========================== -->
@@ -27,18 +26,27 @@
             <a href="#nosotros">Nosotros</a>
             <a href="#servicios">Servicios</a>
             <a href="#galeria">Galería</a>
-            <a href="#contacto">Contacto</a>
         </nav>
-
-        <button id="temaBtn" class="tema-toggle" type="button"
-            aria-label="Cambiar a tema oscuro" aria-pressed="false">
-            <span class="tema-toggle__icono" aria-hidden="true">🌙</span>
-            <span class="tema-toggle__texto">Tema Oscuro</span>
-            <span class="tema-toggle__pista" aria-hidden="true">
-                <span class="tema-toggle__circulo"></span>
-            </span>
-        </button>
-        
+        <div class="acciones-header">
+            <a class="registro-icono"
+               href="registro.html"
+               aria-label="Inscribirse en CineVibe"
+               title="Inscribirse">
+                <svg viewBox="0 0 24 24" aria-hdden="true">
+                    <circle cx="9" cy="8" r="4"></circle>
+                    <path d="M3 21a6 6 0 0 1 12 0"></path>
+                    <path d="M19 8v6M16 11h6"></path>
+                </svg>
+            </a>
+            <button id="temaBtn" class="tema-toggle" type="button"
+                aria-label="Cambiar a tema oscuro" aria-pressed="false">
+                <span class="tema-toggle__icono" aria-hidden="true">🌙</span>
+                <span class="tema-toggle__texto">Tema Oscuro</span>
+                <span class="tema-toggle__pista" aria-hidden="true">
+                    <span class="tema-toggle__circulo"></span>
+                </span>
+            </button>
+        </div>
     </header>
 
 
@@ -56,13 +64,17 @@
         
         <div class="hero-text">
 
-            <h1>Bienvenido a NotiPelis</h1>
+            <h1>Bienvenido a CineVibe</h1>
 
             <p>
-                Tu fuente de noticias sobre el mundo del cine.
+                Descubre los estrenos, tráilers y noticias que están dando de qué hablar.
             </p>
 
-            <button onclick="mostrarMensaje()">
+            <a class="hero-boton" href="#servicios">
+                Explorar contenido 
+            </a>
+
+            <button class="hero-boton" onclick="mostrarMensaje()">
                 Conocer más
             </button>
 
@@ -79,11 +91,37 @@
         <h2>Sobre Nosotros</h2>
 
         <p class="texto-centro">
-            NotiPelis se trata de una página desarrollada para ver las noticias más relevantes del momento en el mundo del cine.
+            CineVibe encontrarás las noticias más relevantes del mundo del cine: estrenos, tráileres y reseñas.
         </p>
 
     </section>
+    
+    <section id="noticias" class="section">
+        <h2>Últimas noticias</h2>
 
+        <div class="cards">
+            <article class="card">
+                <img class="noticia-imagen" src="fondo2.jpg" alt="Público disfrutando de una película en la sala de cine">
+                <p class="noticia-categoria">Estrenos</p>
+                <h3>Novedades de la semana en el cine</h3>
+                <p>Eneterate de los próximos estrenos y de las películas que llegan a la carteera.</p>
+            </article>
+
+            <article class="card">
+                <img class="noticia-imagen" src="fondo1.jpg" alt="Claqueta de cine durante una producción">
+                <p class="noticia-categoria">Tráilers</p>
+                <h3>Los tráilers más esperados</h3>
+                <p>Un vistazo a los avances que están despertando la curiosidad de los espectadores.</p>
+            </article>
+
+            <article class="card">
+                <img class="noticia-imagen" src="foto3.jpg" alt="Butacas rojas en una sala de cine">
+                <p class="noticia-categoria">Reseñas</p>
+                <h3>Una película para descubrir</h3>
+                <p>Lee nuestras impresiones y descubre si esta película podría ser para ti.</p>
+            </article>
+        </div>
+    </section>
 
     <!-- =========================
          SERVICIOS
@@ -95,30 +133,41 @@
         <div class="cards">
 
             <div class="card">
-                <h3>Trailers </h3>
+                <img class="servicio-imagen" src="fondo3.jpg" alt="" aria-hidden="true">
+                <div class="card-contenido">
+                <span class="servicio-icono" aria-hidden="true">🎞️</span>
+                <h3>Historia del cine</h3>
                 <p>
-                    Los principales trailers de las peliculas mas esperadas del momento.
+                    Recorre la evolución del cine, sus grandes movimientos y momentos clave.
                 </p>
 
-                <button onclick="mostrarServicio('Trailers')">
+                <button onclick="mostrarServicio('Historia del cine')">
                     Ver más
                 </button>
+                </div>
             </div>
 
 
             <div class="card">
-                <h3>Reseñas</h3>
+                <img class="servicio-imagen" src="foto1.jpg" alt="" aria-hidden="true">
+                <div class="card-contenido">
+                <span class="servicio-icono" aria-hidden="true">📽️</span>
+                <h3>Tecnología cinematográfica</h3>
                 <p>
-                    Las mejores reseñas de las películas estrenadas recientemente.
+                    Conoce las cámaras, proyectores y técnicas que hacen posible cada película.
                 </p>
 
-                <button onclick="mostrarServicio('Reseñas')">
+                <button onclick="mostrarServicio('Tecnología cinematográfica')">
                     Ver más
                 </button>
+                </div>
             </div>
 
 
             <div class="card">
+                <img class="servicio-imagen" src="teatro.jpg" alt="" aria-hidden="true">
+                <div class="card-contenido">
+                <span class="servicio-icono" aria-hidden="true">🎥</span>
                 <h3>Directores</h3>
                 <p>
                     Conoce a los mejores directores del cine moderno y sus obras más destacadas.
@@ -127,12 +176,36 @@
                 <button onclick="mostrarServicio('Directores')">
                     Ver más
                 </button>
+                </div>
             </div>
 
         </div>
 
     </section>
 
+    <section id="estrenos" class="section">
+        <h2>Próximos estrenos</h2>
+
+        <div class="cards">
+            <div class="card">
+                <img class="estreno-poster" src="foto1.jpg" alt="Imagen cinematográfica para el próximo estreno">
+                <h3>Título de la película</h3>
+                <p class="estreno-fecha">Estreno: próximamente</p>
+            </div>
+
+            <div class="card">
+                <img class="estreno-poster" src="fondo3.jpg" alt="Imagen cinematográfica para el próximo estreno">
+                <h3>Título de la película</h3>
+                <p class="estreno-fecha">Estreno: próximamente</p>
+            </div>
+
+            <div class="card">
+                <img class="estreno-poster" src="fondo2.jpg" alt="Imagen cinematográfica para el próximo estreno">
+                <h3>Título de la película</h3>
+                <p class="estreno-fecha"> Estreno: próximamente</p>
+            </div>
+        </div>
+    </section>
 
     <!-- =========================
          GALERÍA
@@ -142,83 +215,35 @@
         <h2>Galería</h2>
 
         <div class="galeria">
-            <img src="foto1.jpg">
-            <img src="foto2.jpg">
-            <img src="foto3.jpg">
-        </div>
+            <figure class="galeria-tarjeta">
+                <img src="foto1.jpg" alt="Escena de cine">
+                <figcaption>Una noche de película</figcaption>
+            </figure>
 
-    </section>
+            <figure class="galeria-tarjeta">
+                <img src="foto2.jpg" alt="Cámara fotográfica utilizada para crear imágenes de cine">
+                <figcaption>Historias que nos inspiran</figcaption>
+            </figure>
 
+            <figure class="galeria-tarjeta">
+                <img src="foto3.jpg" alt="Sala de cine con butacas rojas">
+                <figcaption>Momentos inolvidables</figcaption>
+            </figure>
 
-    <!-- =========================
-         CONTACTO
-    ========================== -->
-    <section id="contacto" class="section">
+            <figure class="galeria-tarjeta">
+                <img src="fondo3.jpg" alt="Rollos de película antiguos">
+                <figcaption>Luz, cámara, acción</figcaption>
+            </figure>
 
-        <div class="formulario-seccion">
+            <figure class="galeria-tarjeta">
+                <img src="fondo1.jpg" alt="Claqueta preparada para iniciar una escena">
+                <figcaption>Historias en pantalla</figcaption>
+            </figure>
 
-            <h2>Formulario de Contacto</h2>
-
-            <form id="formularioContacto" novalidate>
-
-                <!-- NOMBRE -->
-                <div class="campo">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre"
-                           minlength="3" maxlength="30" required
-                           placeholder="Escribe tu nombre">
-                    <small class="mensaje-error" id="errorNombre"></small>
-                </div>
-
-                <!-- APELLIDO -->
-                <div class="campo">
-                    <label for="apellido">Apellido:</label>
-                    <input type="text" id="apellido" name="apellido"
-                           minlength="3" maxlength="30" required
-                           placeholder="Escribe tu apellido">
-                    <small class="mensaje-error" id="errorApellido"></small>
-                </div>
-
-                <!-- EMAIL -->
-                <div class="campo">
-                    <label for="email">Correo electrónico:</label>
-                    <input type="email" id="email" name="email"
-                           maxlength="100" required
-                           placeholder="ejemplo@correo.com">
-                    <small class="mensaje-error" id="errorEmail"></small>
-                </div>
-
-                <!-- TELEFONO -->
-                <div class="campo">
-                    <label for="telefono">Número de teléfono:</label>
-                    <input type="tel" id="telefono" name="telefono"
-                           minlength="7" maxlength="10" required
-                           placeholder="3001234567">
-                    <small class="mensaje-error" id="errorTelefono"></small>
-                </div>
-
-                <!-- ASUNTO -->
-                <div class="campo">
-                    <label for="asunto">Asunto:</label>
-                    <input type="text" id="asunto" name="asunto"
-                           minlength="5" maxlength="80" required
-                           placeholder="Escribe el asunto">
-                    <small class="mensaje-error" id="errorAsunto"></small>
-                </div>
-
-                <!-- MENSAJE -->
-                <div class="campo">
-                    <label for="mensaje">Mensaje:</label>
-                    <textarea id="mensaje" name="mensaje"
-                              minlength="10" maxlength="500" required
-                              placeholder="Escribe tu mensaje"></textarea>
-                    <small class="mensaje-error" id="errorMensaje"></small>
-                </div>
-
-                <button type="submit">Enviar formulario</button>
-                <p id="mensajeExito" aria-live="polite"></p>
-
-            </form>
+            <figure class="galeria-tarjeta">
+                <img src="fondo2.jpg" alt="Público viendo una película en una sala">
+                <figcaption>Mundos de película</figcaption>
+            </figure>
         </div>
 
     </section>
@@ -230,7 +255,7 @@
     <footer>
 
         <p>
-            © 2026 NotiPelis - All Rights Reserved
+            © 2026 CineVibe - All Rights Reserved
         </p>
 
         <p>

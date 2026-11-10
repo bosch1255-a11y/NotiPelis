@@ -3,6 +3,12 @@
 ========================= */
 
 * {
+    --color-fondo: #f4f1ea;
+    --color-superficie: #ffffff;
+    --color-texto: #292929;
+    --color-oscuro: #1c1c1c;
+    --color-acento: #c1121f;
+    --color-acento-hover: #980e18;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,8 +20,8 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    color: #333;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
 }
 
 
@@ -24,7 +30,7 @@ body {
 ========================= */
 
 header {
-    background-color: #222222;
+    background-color: var(--color-oscuro);
     color: white;
 
     display: flex;
@@ -56,6 +62,7 @@ header {
 nav {
     display: flex;
     gap: 25px;
+    margin-left: 32px;
 }
 
 nav a {
@@ -64,7 +71,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #00aaff;
+    color: var(--color-acento);
 }
 
 
@@ -101,11 +108,11 @@ nav a:hover {
 }
 
 .hero-slide--1 {
-    background-image: url('teatro.jpg');
+    background-image: url('foto1.jpg');
 }
 
 .hero-slide--2 {
-    background-image: url('fondo1.jpg');
+    background-image: url('foto2.jpg');
     animation-delay: 5s;
 }
 
@@ -164,6 +171,27 @@ nav a:hover {
     margin-bottom: 30px;
 }
 
+.hero-boton {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: var(--color-acento);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.hero-boton:hover {
+    background-color: var(--color-acento-hover);
+    transform: scale(1.05);
+}
+
+.hero-boton:focus-visible {
+    outline: 3px solid var(--color-acento);
+    outline-offset: 4px;
+}
+
 
 /* =========================
    SECCIONES
@@ -180,7 +208,7 @@ nav a:hover {
 }
 
 .fondo {
-    background-color: #f2f2f2;
+    background-color: var(--color-fondo);
 }
 
 .texto-centro {
@@ -196,7 +224,7 @@ nav a:hover {
 ========================= */
 
 button {
-    background-color: #0077cc;
+    background-color: var(--color-acento);
     color: white;
 
     border: none;
@@ -214,7 +242,7 @@ button {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: #343434;
+    background: var(--color-oscuro);
     color: #fff;
     border: none;
     padding: 8px 12px;
@@ -237,7 +265,7 @@ button {
     outline-offset: 3px;
 }
 
-.ema-toggle__icono {
+.tema-toggle__icono {
     font-size: 17px;
     color: #ffd166;
     line-height: 1;
@@ -270,6 +298,7 @@ button {
     transform: translateX(16px);
 }
 
+
 /* =========================
    TARJETAS
 ========================= */
@@ -284,7 +313,7 @@ button {
 }
 
 .card {
-    background-color: white;
+    background-color: var(--color-superficie);
 
     padding: 30px;
 
@@ -296,6 +325,10 @@ button {
         0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+.card-contenido {
+    padding: 24px;
+}
+
 .card h3 {
     margin-bottom: 15px;
 }
@@ -305,6 +338,69 @@ button {
     line-height: 1.6;
 }
 
+.noticia-imagen {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.noticia-categoria {
+    color:var(--color-acento);
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.servicio-icono {
+    display: block;
+    font-size: 40px;
+    margin-bottom: 14px;
+}
+
+#servicios .card {
+    padding: 0;
+    overflow: hidden;
+    color: var(--color-texto);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#servicios .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+}   
+
+.servicio-imagen {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.servicio-icono {
+    margin-bottom: 10px;
+}
+
+#estrenos .cards {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.estreno-poster {
+    display: block;
+    width: min(100%, 220px);
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 0 auto 16px;
+}
+
+.estreno-fecha {
+    color: var(--color-acento);
+    font-weight: bold;
+}
+
 
 /* =========================
    GALERÍA
@@ -312,38 +408,37 @@ button {
 
 .galeria {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
-.galeria img {
-    width: 100%;
-
-    height: 250px;
-
-    object-fit: cover;
-
+.galeria-tarjeta {
+    overflow: hidden;
+    margin: 0;
     border-radius: 10px;
-
-    cursor: pointer;
-
-    position: relative;
-
-    transition: transform 0.3s;
+    background-color: var(--color-superficie);
+    color: var(--color-texto);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.galeria img.seleccionada {
-    transform: scale(1.25);
-    z-index: 2;
+.galeria-tarjeta img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-.galeria img:not(.seleccionada) {
-    transform: scale(0.82);
-    opacity: 0.65;
+.galeria-tarjeta:hover img {
+    transform: scale(1.06);
 }
+
+.galeria-tarjeta figcaption {
+    padding: 14px;
+    text-align: center;
+    font-weight: bold;
+}
+
 
 /* =========================
    FORMULARIO
@@ -384,7 +479,7 @@ form textarea {
 ========================= */
 
 footer {
-    background-color: #222222;
+    background-color: var(--color-oscuro);
 
     color: white;
 
@@ -412,6 +507,7 @@ footer {
         flex-wrap: wrap;
 
         justify-content: center;
+        margin-left: 0;
     }
 
     .hero h1 {
@@ -427,11 +523,13 @@ footer {
     }
 
 }
+
+
 /* =========================
    DARK MODE
 ========================= */
 body.modo-oscuro {
-    background-color: #121212;
+    background-color: var(--color-oscuro);
     color: white;
 }
 
@@ -444,113 +542,177 @@ body.modo-oscuro .card {
     color: white;    
 }
 
-
-/* ================================
-   FORMULARIO DE CONTACTO CON VALIDACIONES
-================================ */
-
-.formulario-seccion {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 25px;
-    border-radius: 10px;
-}
-
-.formulario-seccion h2 {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.formulario-seccion .campo {
-    margin-bottom: 18px;
-}
-
-.formulario-seccion .campo label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: bold;
-}
-
-.formulario-seccion .campo input,
-.formulario-seccion .campo textarea {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box;
-    font-size: 16px;
-    font-family: Arial, sans-serif;
-}
-
-.formulario-seccion .campo textarea {
-    min-height: 130px;
-    resize: vertical;
-}
-
-.formulario-seccion .campo input:focus,
-.formulario-seccion .campo textarea:focus {
-    outline: none;
-    border-color: #007bff;
-}
-
-.formulario-seccion .campo input.error,
-.formulario-seccion .campo textarea.error {
-    border-color: #dc3545;
-    background-color: #fff5f5;
-}
-
-.formulario-seccion .campo input.correcto,
-.formulario-seccion .campo textarea.correcto {
-    border-color: #198754;
-    background-color: #f5fff8;
-}
-
-.formulario-seccion .mensaje-error {
-    display: block;
-    margin-top: 5px;
-    color: #dc3545;
-    font-size: 14px;
-    min-height: 18px;
-}
-
-.formulario-seccion button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    background-color: #007bff;
+body.modo-oscuro #servicios .card {
+    background-color: #242424;
     color: white;
-    font-size: 16px;
-    cursor: pointer;
 }
 
-.formulario-seccion button:hover {
-    background-color: #0056b3;
+
+/* Página de inscripción */
+.registro {
+    width: min(100% - 32px, 480px);
+    margin: 60px auto;
+    padding: 36px;
+    background-color: var(--color-superficie);
+    color: var(--color-texto);
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
-#mensajeExito {
-    color: #198754;
+.registro > a {
+    display: inline-block;
+    margin-bottom: 28px;
+    color: var(--color-acento);
+    text-decoration: none;
     font-weight: bold;
-    text-align: center;
-    margin-top: 15px;
+}
+.registro > a:hover {
+    text-decoration: underline;
+}
+
+.registro h1 {
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.registro > p {
+    margin-bottom: 28px;
+    line-height:1.6;
+}
+
+#formularioRegistro {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#formularioRegistro label {
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+#formularioRegistro input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font: inherit;
+}
+
+#formularioRegistro input:focus-visible {
+    outline: 3px solid var(--color-acento);
+    outline-offset: 2px;
+}
+
+#formularioRegistro button {
+    margin-top:14px;
+    padding: 13px;
+    border: 0;
+    border-radius: 7px;
+    background-color: var(--color-acento);
+    color: white;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#formularioRegistro button:hover {
+    background-color: var(--color-acento-hover);
+    transform: translateY(-2px);
+}
+
+#registroMensaje {
+    min-height: 24px;
+    margin-top: 10px;
+    color: var(--color-acento);
     line-height: 1.5;
 }
 
-body.modo-oscuro .formulario-seccion .campo input,
-body.modo-oscuro .formulario-seccion .campo textarea {
-    background-color: #242424;
-    color: white;
-    border-color: #666;
-}
-
-body.modo-oscuro .formulario-seccion .campo input.correcto,
-body.modo-oscuro .formulario-seccion .campo textarea.correcto {
-    background-color: #173326;
-}
-
 @media (max-width: 768px) {
-    .formulario-seccion {
-        padding: 10px 0;
+    .registro {
+        margin: 24px auto;
+        padding: 24px 20px;
     }
 }
 
+.acciones-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.registro-icono {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.registro-icono svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.registro-icono:hover {
+    color: white;
+    background-color: var(--color-acento);
+}
+
+.registro-icono:focus-visible {
+    outline: 3px solid var(--color-acento);
+    outline-offset: 3px;
+}
+
+.redes-registro {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.redes-registro a {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    color: var(--color-texto);
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    transition: color 0.2s ease, background-color 0.2s ease,
+                border-color 0.2s ease, transform 0.2s ease;
+}
+
+.redes-registro svg {
+    width: 21px;
+    height: 21px;
+    fill: currentColor;
+}
+
+.redes-registro svg rect,
+.redes-registro svg circle:not(.punto) {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+}
+
+.redes-registro a:hover {
+    color: white;
+    background-color: var(--color-acento);
+    border-color: var(--color-acento);
+    transform: translateY(-3px);
+}
+
+.redes-registro a:focus-visible {
+    outline: 3px solid var(--color-acento);
+    outline-offset: 3px;
+}

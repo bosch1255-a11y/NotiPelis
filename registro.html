@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción | CineVibe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="registro">
+        <a href="index.html">← Volver a CineVibe</a>
+
+        <h1>Únete a CineVibe</h1>
+        <p>Crea tu perfil para estar al día con el mundo del cine.</p>
+
+        <form id="formularioRegistro">
+            <label for="usuario">Nombre de usuario</label>
+            <input type="text" id="usuario" name="usuario"
+                   minlength="3" maxlength="30" required
+                   autocomplete="username"
+                   placeholder="Elige un nombre de usuario">
+
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo"
+                   required autocomplete="email"
+                   placeholder="tucorreo@ejemplo.com">
+
+            <label for="contrasena">Contraseña</label>
+            <input type="password" id="contrasena" name="contrasena"
+                   minlength="8" required autocomplete="new-password"
+                   placeholder="Al menos 8 caracteres">
+
+            <button type="submit">Crear cuenta</button>
+            <p id="registroMensaje" aria-live="polite"></p>
+        </form>
+        <div class="redes-registro" aria-label="Redes sociales de Cinevibe">
+            <a href="https://www.instagram.com"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Instagram de CineVibe">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <circle class="punto" cx="18" cy="6" r="1"></circle>
+                </svg>
+            </a>
+
+            <a href="https://www.facebook.com"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Facebook de CineVibe">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.5v3h2.6v8z"></path>
+                </svg>
+            </a>
+
+            <a href="https://x.com/TU_USUARIO"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="X de CineVibe">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.6 22H2.4l7.3-8.4L1.9 2h6.5l4.5 6.8zm-1.1 18h1.7L7.4 3.9H5.6z"></path>
+                </svg>
+            </a> 
+        </div>
+    </main>
+</body>
+</html>
